@@ -1,0 +1,2 @@
+0.1 - Initial version
+    - added FilterUtil to dynamically build where clause for sql queries
