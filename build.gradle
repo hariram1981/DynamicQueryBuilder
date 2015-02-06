@@ -13,7 +13,7 @@ apply plugin: 'maven'
 
 uploadArchives {
 	repositories.mavenDeployer {
-		repository (url: "file:///home/hariram/Personal/github/maven-repo-release")
+		repository (url: "file:///home/hariram/Personal/github/maven-repo-snapshot")
 		pom.version = '0.1'
 		pom.artifactId = 'dynamicquerybuilder'
 		pom.groupId = 'com.hariram'
