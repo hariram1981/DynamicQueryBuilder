@@ -14,7 +14,7 @@ apply plugin: 'maven'
 uploadArchives {
 	repositories.mavenDeployer {
 		repository (url: "file:///home/hariram/Personal/github/maven-repo-snapshot")
-		pom.version = '0.1'
+		pom.version = '0.2'
 		pom.artifactId = 'dynamicquerybuilder'
 		pom.groupId = 'com.hariram'
 	}
@@ -23,7 +23,7 @@ uploadArchives {
 
 jar {
     baseName = 'dynamicquerybuilder'
-    version =  '0.1'
+    version =  '0.2'
 }
 
 repositories {
