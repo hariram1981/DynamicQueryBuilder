@@ -2,6 +2,10 @@ package com.hariram.dynamicquerybuilder;
 
 import java.util.List;
 
+/**
+ * @author yamuna
+ *
+ */
 public class JoinFilterUtil {
 	
 	public enum JOIN_TYPE {INNER, LEFT, RIGHT};

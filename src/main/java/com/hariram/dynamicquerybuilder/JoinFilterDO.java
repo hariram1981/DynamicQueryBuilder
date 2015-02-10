@@ -5,6 +5,10 @@ import java.util.List;
 
 import com.hariram.dynamicquerybuilder.JoinFilterUtil.JOIN_TYPE;
 
+/**
+ * @author yamuna
+ *
+ */
 public class JoinFilterDO {
 	private String table1 = "";
 	private String table2= "";
