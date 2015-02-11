@@ -1,15 +1,17 @@
 package com.hariram.dynamicquerybuilder;
 
+import com.hariram.dynamicquerybuilder.FilterUtil.FILTER_CONDITION;
+
 public class FilterDO {
 	private String columnName = "";
 	private String columnValue = "";
-	private String columnCondition = "";
+	private FILTER_CONDITION columnCondition = FILTER_CONDITION.EQUAL;
 	
 	public FilterDO() {
 	}
 	
 	public FilterDO(String columnName, String columnValue,
-			String columnCondition) {
+			FILTER_CONDITION columnCondition) {
 		this.columnName = columnName;
 		this.columnValue = columnValue;
 		this.columnCondition = columnCondition;
@@ -31,11 +33,11 @@ public class FilterDO {
 		this.columnValue = columnValue;
 	}
 
-	public String getColumnCondition() {
+	public FILTER_CONDITION getColumnCondition() {
 		return columnCondition;
 	}
 
-	public void setColumnCondition(String columnCondition) {
+	public void setColumnCondition(FILTER_CONDITION columnCondition) {
 		this.columnCondition = columnCondition;
 	}
 }

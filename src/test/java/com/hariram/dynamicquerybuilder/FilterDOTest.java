@@ -9,13 +9,14 @@ import java.util.Map;
 
 import org.junit.Test;
 
+import com.hariram.dynamicquerybuilder.FilterUtil.FILTER_CONDITION;
 import com.hariram.dynamicquerybuilder.JoinFilterUtil.JOIN_TYPE;
 
 public class FilterDOTest {
 
-	//@Test
+	@Test
 	public void testSingle() {
-		FilterDO filterDO = new FilterDO("ID", "5", ">");
+		FilterDO filterDO = new FilterDO("ID", "5", FILTER_CONDITION.GREATER);
 		List<FilterDO> filterList = new ArrayList<FilterDO>();
 		filterList.add(filterDO);
 		String str = FilterUtil.getConditions(filterList);
@@ -23,19 +24,19 @@ public class FilterDOTest {
 		assertTrue(true);
 	}
 	
-	//@Test
+	@Test
 	public void testMultiple() {
-		FilterDO filterDO = new FilterDO("ID", "5", ">");
+		FilterDO filterDO = new FilterDO("ID", "5", FILTER_CONDITION.GREATER);
 		List<FilterDO> filterList = new ArrayList<FilterDO>();
 		filterList.add(filterDO);
 
-		filterDO = new FilterDO("NAME", "A", "=");
+		filterDO = new FilterDO("NAME", "A", FILTER_CONDITION.EQUAL);
 		filterList.add(filterDO);
 		
-		filterDO = new FilterDO("USER", "B", "<");
+		filterDO = new FilterDO("USER", "B", FILTER_CONDITION.LESSER);
 		filterList.add(filterDO);
 		
-		filterDO = new FilterDO("TYPE", "ACTIVE", "=");
+		filterDO = new FilterDO("TYPE", "ACTIVE", FILTER_CONDITION.EQUAL);
 		filterList.add(filterDO);
 
 		

@@ -4,6 +4,8 @@ import java.util.List;
 
 public final class FilterUtil {
 
+	public enum FILTER_CONDITION {GREATER, LESSER, EQUAL};
+	
 	private FilterUtil() {
 	}
 	
@@ -26,13 +28,38 @@ public final class FilterUtil {
 		
 		strBuff.append(filterDO.getColumnName());
 		strBuff.append(" ");
-		strBuff.append(filterDO.getColumnCondition());
+		strBuff.append(getConditionString(filterDO.getColumnCondition()));
 		strBuff.append(" ");
 		strBuff.append("'");
 		strBuff.append(filterDO.getColumnValue());
 		strBuff.append("'");
 		
 		return strBuff.toString();
+	}
+	
+	/**
+	 * Returns filter condition as string (from enum)
+	 * 
+	 * @param filterCondition condition of filter 
+	 * @return condition of filter as String
+	 */
+	private static String getConditionString(FILTER_CONDITION filterCondition) {
+		String conditionStr = "";
+		switch(filterCondition) {
+			case GREATER:
+				conditionStr = ">";
+				break;
+			case LESSER:
+				conditionStr = "<";
+				break;
+			case EQUAL:
+				conditionStr = "=";
+				break;
+			default:
+				conditionStr = "=";
+				break;
+		}
+		return conditionStr;
 	}
 
 }
